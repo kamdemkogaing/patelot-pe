@@ -1,0 +1,14 @@
+/* 1. Konkrete Artikelnummer */
+body[data-article-number="DMN-4-44"] {
+  background-color: lightyellow;
+}
+
+/* 2. Artikelnummer beginnt mit „DMN“ */
+body[data-article-number^="DMN"] {
+  border: 2px solid red;
+}
+
+/* 3. Artikelnummer enthält „4-44“ */
+body[data-article-number*="4-44"] {
+  color: blue;
+}

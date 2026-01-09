@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrousel Texte + Image</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .carousel-container {
+      display: flex;
+      width: 90%;
+      max-width: 1420px;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Bloc gauche (texte avec polygone) */
+    .carousel-text {
+      /*  flex: 1; */
+      background: black;
+      color: white;
+      padding: 50px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      /* Coupe diagonale */
+      /* clip-path: polygon(0 0, 70% 0, 60% 100%, 0% 100%); */
+    }
+
+    .carousel-text h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .carousel-text p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .carousel-text button {
+      width: 25%;
+      padding: 10px 20px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .carousel-text button:hover {
+      background: #ffcc00;
+      color: black;
+    }
+
+    /* Bloc droit (images avec polygone complémentaire) */
+    .carousel-images {
+      flex: 1.5;
+      position: relative;
+      overflow: hidden;
+
+      /* Polygone miroir qui colle au bloc gauche */
+      /*  clip-path: polygon(70% 0, 100% 0, 100% 100%, 60% 100%); */
+    }
+
+    .slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Navigation */
+    .controls {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: white;
+      opacity: 0.6;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .dot.active {
+      opacity: 1;
+      background: #ffcc00;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="carousel-container">
+    <!-- Bloc gauche -->
+    <div class="carousel-text">
+      <h1>Sommer-Highlights im Sale</h1>
+      <p>Jetzt bestellen und sparen</p>
+      <button>Zum Sale</button>
+    </div>
+
+    <!-- Bloc droit -->
+    <div class="carousel-images">
+      <div class="slides">
+        <div class="slide"><img src="https://picsum.photos/id/1015/800/500" alt=""></div>
+        <div class="slide"><img src="https://picsum.photos/id/1018/800/500" alt=""></div>
+        <div class="slide"><img src="https://picsum.photos/id/1020/800/500" alt=""></div>
+      </div>
+
+      <div class="controls">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelector(".slides");
+    const dots = document.querySelectorAll(".dot");
+    let index = 0;
+
+    function showSlide(i) {
+      index = i;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle("active", idx === index);
+      });
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => showSlide(i));
+    });
+
+    // Défilement automatique
+    setInterval(() => {
+      index = (index + 1) % dots.length;
+      showSlide(index);
+    }, 4000);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Karussell</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .pos-1 {
+      background-color: black !important;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 1440px;
+      overflow: hidden;
+      margin: 60px auto;
+    }
+
+    .carousel .slides {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .carousel .slide {
+      flex: 0 0 100%;
+      /* jede Slide nimmt volle Breite */
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      background-color: black;
+      align-items: center;
+    }
+
+    /* Linker Block */
+    .carousel .left {
+      width: 40%;
+      background: black;
+      clip-path: polygon(0 0, 90% 0, 70% 100%, 0% 100%);
+      color: white;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .carousel .left h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .carousel .left p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .carousel .btn {
+      width: 70%;
+      background: #ff6600;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 20px;
+      transition: 0.3s;
+      font-size: 20px;
+    }
+
+    .carousel .btn:hover {
+      background: #e65c00;
+    }
+
+    /* Rechter Block */
+    .carousel .right {
+      width: 60%;
+      position: relative;
+      clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+      overflow: hidden;
+    }
+
+    .carousel .right img {
+      width: 100%;
+      object-fit: cover;
+      height: 540px;
+    }
+
+    .carousel .badge {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(45deg, #ff6600, #ff3c00);
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* Dots */
+    .carousel .dots {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      bottom: 10px;
+    }
+
+    .carousel .dots span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .carousel .dots .active {
+      background: #ff6600;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .carousel {
+        height: auto;
+      }
+
+      .carousel .slide {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .carousel .left,
+      .carousel .right {
+        width: 100%;
+        clip-path: none;
+      }
+
+      .carousel .left {
+        padding: 20px;
+      }
+
+      .carousel .right img {
+        height: auto;
+        max-height: 300px;
+      }
+
+      .carousel .btn {
+        text-align: left;
+        width: 55%;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const target = document.querySelector(".cms-section.pos-1.cms-section-default");
+
+      if (target) {
+        target.innerHTML = "";
+
+        target.innerHTML = ` 
+          <div class="carousel"> 
+            <div class="slides"> 
+              <!-- Slide 1 --> 
+              <div class="slide"> 
+                <div class="left"> 
+                  <h2>SOMMERARTIKEL</h2> 
+                  <p>bis 25% Rabatt</p> 
+                  <button class="btn">Jetzt sichern</button> 
+                </div> 
+                <div class="right"> 
+                  <img src="https://shop.printequipment.de/media/08/86/25/1757597259/30_F2_Ultra.jpg" alt="Promo 1"> 
+                  <div class="badge">% SALE</div> 
+                </div> 
+              </div> 
+              <!-- Slide 2 --> 
+              <div class="slide"> 
+                <div class="left"> 
+                  <h2>WINTER SPECIAL</h2> 
+                  <p>bis 30% Rabatt</p> 
+                  <button class="btn">Jetzt kaufen</button> 
+                </div> 
+                <div class="right"> 
+                  <img src="https://shop.printequipment.de/media/fe/80/3f/1757422799/31_Printshow_Stadion-Special.jpg" alt="Promo 2"> 
+                  <div class="badge">% SALE</div> 
+                </div> 
+              </div> 
+              <!-- Slide 3 --> 
+              <div class="slide"> 
+                <div class="left"> 
+                  <h2>HERBST DEALS</h2> 
+                  <p>bis 40% Rabatt</p> 
+                  <button class="btn">Angebot sichern</button> 
+                </div> 
+                <div class="right"> 
+                  <img src="https://shop.printequipment.de/media/11/b0/76/1755600262/27_0__Leasing_25_Jahre.jpg" alt="Promo 3"> 
+                  <div class="badge">% SALE</div> 
+                </div> 
+              </div>
+              <!-- Slide 4 --> 
+              <div class="slide"> 
+                <div class="left"> 
+                  <h2>FRÜHLINGSANGEBOTE</h2> 
+                  <p>bis 20% Rabatt</p> 
+                  <button class="btn">Jetzt entdecken</button> 
+                </div> 
+                <div class="right"> 
+                  <img src="https://shop.printequipment.de/media/a6/8b/44/1753095504/21_XP600_Geburtstag.jpg" alt="Promo 4"> 
+                  <div class="badge">% SALE</div> 
+                </div> 
+              </div>
+            </div> 
+            <div class="dots"></div> 
+          </div> 
+        `;
+
+        initCarousel();
+      }
+
+      function initCarousel() {
+        const slidesContainer = document.querySelector(".slides");
+        const slides = document.querySelectorAll(".slide");
+        const dotsContainer = document.querySelector(".dots");
+
+        let index = 0;
+        let interval;
+
+        // Dots erstellen 
+        slides.forEach((_, i) => {
+          const dot = document.createElement("span");
+          if (i === 0) dot.classList.add("active");
+          dot.addEventListener("click", () => {
+            index = i;
+            updateCarousel();
+            resetAutoplay();
+          });
+          dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dots span");
+
+        function updateCarousel() {
+          const slideWidth = slides[0].offsetWidth;
+          slidesContainer.style.transform = `translateX(${-index * slideWidth}px)`;
+
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+          });
+
+          dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+          });
+        }
+
+        function nextSlide() {
+          index = (index + 1) % slides.length;
+          updateCarousel();
+        }
+
+        function startAutoplay() {
+          interval = setInterval(nextSlide, 4000); // alle 4 Sek.
+        }
+
+        function resetAutoplay() {
+          clearInterval(interval);
+          startAutoplay();
+        }
+
+        window.addEventListener("resize", updateCarousel);
+
+        updateCarousel();
+        startAutoplay();
+      }
+    });
+  </script>
+</body>
+
+</html>

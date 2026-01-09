@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire - live_PVrHyrE4mQdH2Mxr6ja9eHseNSrV5m</title>
+</head>
+
+<body style="background:#f8f8f8; font-family:Arial, sans-serif;">
+
+  <div
+    style="max-width:420px; margin:40px auto; background:#fff; border-radius:12px; padding:24px; box-shadow:0 4px 10px rgba(0,0,0,0.12);">
+
+    <!-- Alerte clignotante -->
+    <div style="display:flex; align-items:flex-start; gap:10px; background:#fff8e5; border:1px solid #f2d98c; padding:12px 16px; border-radius:8px; margin-bottom:20px; color:#6b4c00; font-size:14px;
+      animation: blink 1.5s infinite;">
+      <span style="font-size:18px;">⚠️</span>
+      <div>
+        Veuillez vous assurer que votre
+        <a href="#" style="color:#7a4900; text-decoration:underline;">adresse de facturation</a>
+        contient un <strong>prénom</strong> et un <strong>nom</strong>.
+      </div>
+    </div>
+
+    <!-- Champ Prénom -->
+    <div style="font-weight:bold; margin-bottom:6px; font-size:14px;">Prénom</div>
+    <div contenteditable="true"
+      style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; margin-bottom:16px; font-size:14px; box-sizing:border-box; min-height:18px; color:#000;">
+      Prénom
+    </div>
+
+    <!-- Champ Nom -->
+    <div style="font-weight:bold; margin-bottom:6px; font-size:14px;">Nom</div>
+    <div contenteditable="true"
+      style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; font-size:14px; box-sizing:border-box; min-height:18px; color:#000;">
+      Nom
+    </div>
+
+  </div>
+
+  <!-- Animation Keyframes -->
+  <style>
+    @keyframes blink {
+
+      0%,
+      100% {
+        background-color: #fff8e5;
+      }
+
+      50% {
+        background-color: #ffeab8;
+      }
+    }
+
+    /* Input-Look beim Fokussieren */
+    div[contenteditable="true"]:focus {
+      outline: none;
+      border: 1px solid #f2d98c;
+      box-shadow: 0 0 4px #f2d98c;
+      background: #fffef6;
+    }
+  </style>
+
+</body>
+
+</html>

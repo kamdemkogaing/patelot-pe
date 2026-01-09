@@ -1,0 +1,12 @@
+.swag-custom-notification-banner {
+  background-color: #ff7f7f !important;
+}
+
+.swag-custom-notification-banner-text {
+  text-align: center !important;
+}
+
+.swag-custom-notification-banner-close-icon {
+  align-self: auto !important;
+  cursor: pointer !important;
+}

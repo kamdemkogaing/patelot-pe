@@ -1,0 +1,81 @@
+#voucher-popup .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+#voucher-popup .popup-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 680px;
+  max-width: 90%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+#voucher-popup h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: black !important;
+  text-align: left;
+  font-weight: bold;
+}
+
+#voucher-popup h5 {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 1rem !important;
+}
+
+#voucher-popup p {
+  font-size: 13px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+#voucher-popup .cta {
+  padding: 12px 20px;
+  border-radius: 15px;
+  background: #000;
+  border: 2px solid #000;
+  color: #fff;
+  text-decoration: none;
+  float: left;
+}
+
+#voucher-popup .cta:hover {
+  background: white;
+  color: #000;
+}
+
+#voucher-popup .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Karussell</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .pos-1 {
+      background-color: black !important;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 1440px;
+      overflow: hidden;
+      margin: 2px auto;
+    }
+
+    .carousel .slides {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .carousel .slide {
+      flex: 0 0 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      background-color: black;
+      align-items: center;
+    }
+
+    /* Linker Block */
+    .carousel .left {
+      width: 40%;
+      background: black;
+      clip-path: polygon(0 0, 90% 0, 70% 100%, 0% 100%);
+      color: white;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .carousel .left h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .carousel .left p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .carousel .btn {
+      width: 70%;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 20px;
+      transition: 0.3s;
+      font-size: 20px;
+    }
+
+    /* Button Farben */
+    .btn-1 {
+      background: purple;
+    }
+
+    .btn-1:hover {
+      background: darkviolet;
+    }
+
+    .btn-2 {
+      background: #ff6600;
+    }
+
+    .btn-2:hover {
+      background: #e65c00;
+    }
+
+    .btn-3 {
+      background: green;
+    }
+
+    .btn-3:hover {
+      background: darkgreen;
+    }
+
+    .btn-4 {
+      background: deepskyblue;
+    }
+
+    .btn-4:hover {
+      background: dodgerblue;
+    }
+
+    /* Rechter Block */
+    .carousel .right {
+      width: 60%;
+      position: relative;
+      clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+      overflow: hidden;
+    }
+
+    .carousel .right img {
+      width: 100%;
+      object-fit: cover;
+      height: 540px;
+    }
+
+    .carousel .badge {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* Badge Farben */
+    .badge-1 {
+      background: linear-gradient(45deg, purple, violet);
+    }
+
+    .badge-2 {
+      background: linear-gradient(45deg, #ff6600, #ff3c00);
+    }
+
+    .badge-3 {
+      background: linear-gradient(45deg, green, limegreen);
+    }
+
+    .badge-4 {
+      background: linear-gradient(45deg, deepskyblue, skyblue);
+    }
+
+    /* Dots */
+    .carousel .dots {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      bottom: 10px;
+    }
+
+    .carousel .dots span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .carousel .dots .active {
+      background: #ff6600;
+    }
+
+    /* Navigation Pfeile */
+    .carousel .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      color: white;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s;
+      z-index: 10;
+    }
+
+    .carousel .arrow:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel .arrow.left {
+      left: 15px;
+    }
+
+    .carousel .arrow.right {
+      right: 15px;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .carousel {
+        height: auto;
+      }
+
+      .carousel .slide {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .carousel .left,
+      .carousel .right {
+        width: 100%;
+        clip-path: none;
+      }
+
+      .carousel .left {
+        padding: 20px;
+      }
+
+      .carousel .right img {
+        height: auto;
+        max-height: 300px;
+      }
+
+      .carousel .btn {
+        text-align: left;
+        width: 55%;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const target = document.querySelector(".cms-section.pos-1.cms-section-default");
+
+      if (target) {
+        target.innerHTML = "";
+
+        target.innerHTML = ` 
+          <div class="carousel"> 
+            <div class="slides"> 
+              <!-- Slide 1 --> 
+              <div class="slide"> 
+                <div class="left"> 
+                  <h2>SOMMERARTIKEL</h2> 
+                  <p>bis 25% Rabatt</p> 
+                  <button class="btn btn-1">Jetzt sichern</button> 
+                </div> 
+                <div class="right"> 
+                  <img src="https://shop.printequipment.de/media/08/86/25/1757597259/30_F2_Ultra.jpg" alt="Promo 1"> 
+                  <div class="badge badge-1">NEU</div> 
+                </div> 
+              </div> 
+              <!-- Slide 2 --> 
+              <div class="slide"> 
+                <div class="left"> 
+                  <h2>WINTER SPECIAL</h2> 
+                  <p>bis 30% Rabatt</p> 
+                  <button class="btn btn-2">Jetzt kaufen</button> 
+                </div> 
+                <div class="right"> 
+                  <img src="https://shop.printequipment.de/media/fe/80/3f/1757422799/31_Printshow_Stadion-Special.jpg" alt="Promo 2"> 
+                  <div class="badge badge-2">% SALE</div> 
+                </div> 
+              </div> 
+              <!-- Slide 3 --> 
+              <div class="slide"> 
+                <div class="left"> 
+                  <h2>HERBST DEALS</h2> 
+                  <p>bis 40% Rabatt</p> 
+                  <button class="btn btn-3">Angebot sichern</button> 
+                </div> 
+                <div class="right"> 
+                  <img src="https://shop.printequipment.de/media/11/b0/76/1755600262/27_0__Leasing_25_Jahre.jpg" alt="Promo 3"> 
+                  <div class="badge badge-3">EVENT</div> 
+                </div> 
+              </div>
+              <!-- Slide 4 --> 
+              <div class="slide"> 
+                <div class="left"> 
+                  <h2>FRÜHLINGSANGEBOTE</h2> 
+                  <p>bis 20% Rabatt</p> 
+                  <button class="btn btn-4">Jetzt entdecken</button> 
+                </div> 
+                <div class="right"> 
+                  <img src="https://shop.printequipment.de/media/a6/8b/44/1753095504/21_XP600_Geburtstag.jpg" alt="Promo 4"> 
+                  <div class="badge badge-4">0% <br>LEASING</div> 
+                </div> 
+              </div>
+            </div> 
+            <div class="arrow left">&#10094;</div>
+            <div class="arrow right">&#10095;</div>
+            <div class="dots"></div> 
+          </div> 
+        `;
+
+        initCarousel();
+      }
+
+      function initCarousel() {
+        const slidesContainer = document.querySelector(".slides");
+        const slides = document.querySelectorAll(".slide");
+        const dotsContainer = document.querySelector(".dots");
+        const prevBtn = document.querySelector(".arrow.left");
+        const nextBtn = document.querySelector(".arrow.right");
+
+        let index = 0;
+        let interval;
+
+        // Dots erstellen 
+        slides.forEach((_, i) => {
+          const dot = document.createElement("span");
+          if (i === 0) dot.classList.add("active");
+          dot.addEventListener("click", () => {
+            index = i;
+            updateCarousel();
+            resetAutoplay();
+          });
+          dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dots span");
+
+        function updateCarousel() {
+          const slideWidth = slides[0].offsetWidth;
+          slidesContainer.style.transform = `translateX(${-index * slideWidth}px)`;
+
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+          });
+
+          dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+          });
+        }
+
+        function nextSlide() {
+          index = (index + 1) % slides.length;
+          updateCarousel();
+        }
+
+        function prevSlide() {
+          index = (index - 1 + slides.length) % slides.length;
+          updateCarousel();
+        }
+
+        function startAutoplay() {
+          interval = setInterval(nextSlide, 4000);
+        }
+
+        function resetAutoplay() {
+          clearInterval(interval);
+          startAutoplay();
+        }
+
+        // Event Listener für Pfeile
+        nextBtn.addEventListener("click", () => {
+          nextSlide();
+          resetAutoplay();
+        });
+
+        prevBtn.addEventListener("click", () => {
+          prevSlide();
+          resetAutoplay();
+        });
+
+        window.addEventListener("resize", updateCarousel);
+
+        updateCarousel();
+        startAutoplay();
+      }
+    });
+  </script>
+
+  <p>We are the champions</p>
+
+  <p>
+    Des panneaux en bois impressionnants avec une plaque en aluminium imprimable
+    individuellement pour les mérites et les performances exceptionnelles permettent aux vainqueurs de gagner deux fois.
+    Les concours, diplômes, distinctions, anniversaires ou félicitations dans le domaine du sport, du travail et des
+    loisirs sont toujours d'actualité et sont ainsi récompensés comme il se doit. Un choix de huit couleurs métalliques
+  </p>
+
+  <ul>
+    <li>comble tous les souhaits.</li>
+    <li>Plaques en bois de haute qualité pour, par exemple, des certificats, des distinctions, etc.</li>
+    <li>Dispositif de suspension pour une fixation verticale ou horizontale.</li>
+    <li>Couleurs : noir marbré (K), rouge veiné (R)</li>
+    <li>La plaque en aluminium n’est pas incluse, elle est à commander séparément <a
+        href="https://shop.printequipment.de/fr/search?search=plaques+alu+tableau">ici</a> (attention à la
+      taille de la
+      plaque en fonction de la taille du tableau)</li>
+    <li>Pour fixer la plaque au tableau, vous trouverez les Points adhésifs double-face <a
+        href="https://shop.printequipment.de/fr/points-adhesifs-double-face-diverses-tailles/DK-20">ici</a> </li>
+  </ul>
+
+  <strong>HT-R-</strong>
+</body>
+
+</html>

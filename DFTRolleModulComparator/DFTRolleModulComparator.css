@@ -1,0 +1,84 @@
+.product-compare-module {
+  max-width: 1720px;
+  padding: 2rem 0;
+  margin-right: auto;
+  margin-left: auto;
+  background: #f3f3f3;
+  border-radius: 8px;
+}
+
+/* Tabelle mit Grid */
+.pcm-table {
+  display: grid;
+  grid-template-columns: 220px repeat(3, 1fr);
+  border-collapse: collapse;
+  gap: 5px;
+}
+
+/* Jede Zeile */
+.pcm-row {
+  display: contents; /* Magic: jede row teilt Zellen perfekt aus */
+}
+
+/* Jede Zelle */
+.pcm-cell {
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  text-align: center;
+}
+
+/* Hintergrund für ungerade Datenzeilen */
+.pcm-row.pcm-odd .pcm-cell {
+  background: #e6e6e6;
+}
+
+/* Footer bleibt weiß */
+.pcm-footer .pcm-cell {
+  background: #fff !important;
+  border-bottom: none;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Feature-Spalte */
+.pcm-feature {
+  font-weight: 800;
+  text-align: left;
+}
+
+/* Header (Bilder) */
+.pcm-header-cell img {
+  max-width: 180px;
+  display: block;
+  margin: 0 auto;
+}
+
+.pcm-header .pcm-cell {
+  background: transparent !important;
+  border-bottom: none;
+}
+
+/* Buttons */
+.pcm-btn {
+  display: inline-block;
+  background: black;
+  color: white;
+  padding: 5px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+  border: 2px solid black;
+}
+
+.pcm-btn:hover {
+  background: white;
+  border: 2px solid black;
+  color: black;
+}
+
+.product-text {
+  font-weight: bold;
+  margin-top: 10px;
+}
