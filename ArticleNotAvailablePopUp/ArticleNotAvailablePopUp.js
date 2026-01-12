@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "de-DE": {
       title: "Artikel nicht auf Lager",
       text: `Der Artikel: <strong class="article-number"></strong> ist derzeit nicht im Lager.<br>
-                   Sie können ihn trotzdem bestellen. Sobald er wieder verfügbar ist,
+                   Du kannst ihn trotzdem bestellen. Sobald er wieder verfügbar ist,
                    wird er sofort geliefert.`,
     },
     "fr-FR": {

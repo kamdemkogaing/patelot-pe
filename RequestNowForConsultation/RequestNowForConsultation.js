@@ -3,57 +3,99 @@ const body = document.body;
 const articleNumber = body.dataset.articleNumber;
 
 if (articleNumber && articleNumber.trim() !== "") {
-  // 2. Prüfen, ob das gewünschte Div existiert
+  // 2. Preis-anfragen-Container suchen
   const priceRequestDiv = document.querySelector(
     ".acris-price-on-request-button-container"
   );
 
   if (priceRequestDiv) {
-    // 3. Referenz-Div für Einfügen finden
-    const formContainer = document.querySelector(
-      ".product-detail-form-container"
-    );
+    // 3. Prüfen, ob das Element sichtbar ist
+    const isVisible = (el) => {
+      return !!(
+        el.offsetWidth ||
+        el.offsetHeight ||
+        el.getClientRects().length
+      );
+    };
 
-    if (formContainer) {
-      // 4. Neues Div mit Link erstellen
-      const newDiv = document.createElement("div");
-      newDiv.classList.add("d-grid-consultant"); // neue Klasse
+    // 4. Prüfen, ob es in einer .product-action mit display:none liegt
+    const productAction = priceRequestDiv.closest(".product-action");
+    const isHiddenByProductAction =
+      productAction &&
+      window.getComputedStyle(productAction).display === "none";
 
-      const newLink = document.createElement("a");
-      newLink.href = "https://shop.printequipment.de/du-brauchst-hilfe";
-      newLink.textContent = "JETZT BERATUNG ANFORDERN";
-      newLink.classList.add("btn-light", "custom-btn");
+    // 5. Finale Bedingung
+    if (isVisible(priceRequestDiv) && !isHiddenByProductAction) {
+      const formContainer = document.querySelector(
+        ".product-detail-form-container"
+      );
 
-      // Gewünschte Styles
-      newLink.style.display = "inline-block";
-      newLink.style.textAlign = "center";
-      newLink.style.color = "white";
-      newLink.style.paddingTop = "8px";
-      newLink.style.paddingBottom = "8px";
-      newLink.style.paddingLeft = "50px";
-      newLink.style.paddingRight = "50px";
-      newLink.style.borderRadius = "30px";
-      newLink.style.fontWeight = "800";
-      newLink.style.textTransform = "uppercase";
-      newLink.style.textDecoration = "none";
-      newLink.style.marginTop = "10px";
+      if (formContainer) {
+        /* ===============================
+           Sprachlogik
+        =============================== */
 
-      newDiv.appendChild(newLink);
+        const lang = document.documentElement.lang;
 
-      // 5. Direkt nach formContainer einfügen
-      formContainer.parentNode.insertBefore(newDiv, formContainer.nextSibling);
+        const langConfig = {
+          "de-DE": {
+            url: "https://shop.printequipment.de/du-brauchst-hilfe",
+            text: "JETZT BERATUNG ANFORDERN",
+          },
+          "fr-FR": {
+            url: "https://shop.printequipment.de/fr/du-brauchst-hilfe",
+            text: "DEMANDER CONSEIL",
+          },
+          "en-GB": {
+            url: "https://shop.printequipment.de/en/du-brauchst-hilfe",
+            text: "REQUEST CONSULTATION",
+          },
+        };
 
-      // 6. Hover-Effekt + margin-bottom für neue Klasse
-      const style = document.createElement("style");
-      style.textContent = `
-        .custom-btn:hover {
-          color: black !important;
-        }
-        .d-grid-consultant {
-          margin-bottom: 20px;
-        }
-      `;
-      document.head.appendChild(style);
+        // Fallback: Deutsch
+        const { url, text } = langConfig[lang] || langConfig["de-DE"];
+
+        /* ===============================
+           Button erstellen
+        =============================== */
+
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("d-grid-consultant");
+
+        const newLink = document.createElement("a");
+        newLink.href = url;
+        newLink.textContent = text;
+        newLink.classList.add("btn-light", "custom-btn");
+
+        Object.assign(newLink.style, {
+          display: "inline-block",
+          textAlign: "center",
+          color: "white",
+          padding: "8px 50px",
+          borderRadius: "30px",
+          fontWeight: "800",
+          textTransform: "uppercase",
+          textDecoration: "none",
+          marginTop: "10px",
+        });
+
+        newDiv.appendChild(newLink);
+        formContainer.parentNode.insertBefore(
+          newDiv,
+          formContainer.nextSibling
+        );
+
+        const style = document.createElement("style");
+        style.textContent = `
+          .custom-btn:hover {
+            color: black !important;
+          }
+          .d-grid-consultant {
+            margin-bottom: 20px;
+          }
+        `;
+        document.head.appendChild(style);
+      }
     }
   }
 }
