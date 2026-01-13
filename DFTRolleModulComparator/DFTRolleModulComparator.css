@@ -3,7 +3,7 @@
   padding: 2rem 0;
   margin-right: auto;
   margin-left: auto;
-  background: #f3f3f3;
+  background: #f3f3f3; /* Grau für gesamten Hintergrund */
   border-radius: 8px;
 }
 
@@ -12,18 +12,17 @@
   display: grid;
   grid-template-columns: 220px repeat(3, 1fr);
   border-collapse: collapse;
-  gap: 5px;
 }
 
 /* Jede Zeile */
 .pcm-row {
-  display: contents; /* Magic: jede row teilt Zellen perfekt aus */
+  display: contents;
 }
 
 /* Jede Zelle */
 .pcm-cell {
   padding: 15px;
-  background: #fff;
+  background: #fff; /* Standard: weiß */
   border-bottom: 1px solid #e6e6e6;
   text-align: center;
 }
@@ -35,10 +34,16 @@
 
 /* Footer bleibt weiß */
 .pcm-footer .pcm-cell {
-  background: #fff !important;
   border-bottom: none;
   padding-top: 30px;
   padding-bottom: 30px;
+  background: white !important;
+}
+
+/* Header bekommt ebenfalls grau vom Modul-Hintergrund */
+.pcm-header .pcm-cell {
+  background: white !important;
+  border-bottom: none;
 }
 
 /* Feature-Spalte */
@@ -47,16 +52,11 @@
   text-align: left;
 }
 
-/* Header (Bilder) */
+/* Header-Bilder */
 .pcm-header-cell img {
   max-width: 180px;
   display: block;
   margin: 0 auto;
-}
-
-.pcm-header .pcm-cell {
-  background: transparent !important;
-  border-bottom: none;
 }
 
 /* Buttons */
