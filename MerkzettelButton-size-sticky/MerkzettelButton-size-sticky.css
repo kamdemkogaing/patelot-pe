@@ -1,0 +1,26 @@
+/* Form als Bezugspunkt */
+#productDetailPageBuyProductForm {
+  position: relative;
+}
+
+/* Wishlist Button – Grundzustand + Sticky */
+#productDetailPageBuyProductForm .btn.header-actions-btn {
+  position: sticky;
+  top: 20px; /* Abstand zum oberen Viewport */
+  z-index: 100;
+
+  font-size: inherit;
+  font-weight: normal;
+  text-decoration: none;
+
+  transition:
+    font-size 0.2s ease,
+    font-weight 0.2s ease,
+    text-decoration-color 0.2s ease;
+
+  font-size: 20px !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}

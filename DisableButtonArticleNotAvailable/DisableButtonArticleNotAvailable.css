@@ -1,0 +1,38 @@
+/* Liste aller Artikel, für die der Button deaktiviert wird */
+body[data-article-number="LENA-S"] .btn.btn-primary.btn-buy,
+body[data-article-number="LENA-F-AAA"] .btn.btn-primary.btn-buy,
+body[data-article-number="TTH-ST-AR"] .btn.btn-primary.btn-buy,
+body[data-article-number="TTH-ST-BO"] .btn.btn-primary.btn-buy,
+body[data-article-number="TTH-ST-CO"] .btn.btn-primary.btn-buy,
+body[data-article-number="TTH-R"] .btn.btn-primary.btn-buy,
+body[data-article-number="TTH-AR"] .btn.btn-primary.btn-buy,
+body[data-article-number="TTH-GY"] .btn.btn-primary.btn-buy,
+body[data-article-number="TTH-BO"] .btn.btn-primary.btn-buy,
+body[data-article-number="SPARK-SI"] .btn.btn-primary.btn-buy,
+body[data-article-number="TTH-LG"] .btn.btn-primary.btn-buy,
+body[data-article-number="TTH-CO"] .btn.btn-primary.btn-buy {
+  background-color: #ccc !important; /* grauer Hintergrund */
+  color: #666 !important; /* grauer Text */
+  border-color: #999 !important; /* grauer Rahmen */
+  cursor: not-allowed !important; /* Maus zeigt an, dass es deaktiviert ist */
+  pointer-events: none !important; /* Klicks werden blockiert */
+  opacity: 0.6; /* etwas Transparenz optional */
+}
+
+/* Hover, Focus, Active ebenfalls blockieren */
+body[data-article-number="LENA-S"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="LENA-F-AAA"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="TTH-ST-AR"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="TTH-ST-BO"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="TTH-ST-CO"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="TTH-R"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="TTH-AR"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="TTH-GY"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="TTH-BO"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="SPARK-SI"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="TTH-CO"] .btn.btn-primary.btn-buy:hover {
+  background-color: #ccc !important;
+  color: #666 !important;
+  border-color: #999 !important;
+  cursor: not-allowed !important;
+}

@@ -24,7 +24,7 @@
 }
 
 #voucher-popup h2 {
-  font-size: 25px;
+  font-size: 20px !important;
   margin-bottom: 15px;
   color: black !important;
   text-align: left;
