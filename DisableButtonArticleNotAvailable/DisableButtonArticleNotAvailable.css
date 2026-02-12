@@ -36,3 +36,50 @@ body[data-article-number="TTH-CO"] .btn.btn-primary.btn-buy:hover {
   border-color: #999 !important;
   cursor: not-allowed !important;
 }
+
+/* Wishlist ausblenden nur bei bestimmten Artikeln */
+
+body[data-article-number="LENA-S"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="LENA-F-AAA"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="TTH-ST-AR"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="TTH-ST-BO"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="TTH-ST-CO"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="TTH-R"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="TTH-AR"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="TTH-GY"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="TTH-BO"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="TTH-CO"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="SPARK-SI"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="TTH-LG"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="RH-K"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="RH-LG"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn {
+  visibility: hidden !important;
+}
