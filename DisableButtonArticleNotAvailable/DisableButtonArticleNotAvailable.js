@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
     "TTH-LG",
     "RH-K",
     "RH-LG",
+    "RH-ST-R",
+    "LENA-ST-AAA",
   ];
 
   if (!disabledArticles.includes(articleNumber)) return;

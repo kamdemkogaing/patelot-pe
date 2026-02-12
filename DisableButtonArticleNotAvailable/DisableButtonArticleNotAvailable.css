@@ -10,7 +10,9 @@ body[data-article-number="TTH-GY"] .btn.btn-primary.btn-buy,
 body[data-article-number="TTH-BO"] .btn.btn-primary.btn-buy,
 body[data-article-number="SPARK-SI"] .btn.btn-primary.btn-buy,
 body[data-article-number="TTH-LG"] .btn.btn-primary.btn-buy,
-body[data-article-number="TTH-CO"] .btn.btn-primary.btn-buy {
+body[data-article-number="TTH-CO"] .btn.btn-primary.btn-buy,
+body[data-article-number="RH-ST-R"] .btn.btn-primary.btn-buy,
+body[data-article-number="LENA-ST-AAA"] .btn.btn-primary.btn-buy {
   background-color: #ccc !important; /* grauer Hintergrund */
   color: #666 !important; /* grauer Text */
   border-color: #999 !important; /* grauer Rahmen */
@@ -30,7 +32,9 @@ body[data-article-number="TTH-AR"] .btn.btn-primary.btn-buy:hover,
 body[data-article-number="TTH-GY"] .btn.btn-primary.btn-buy:hover,
 body[data-article-number="TTH-BO"] .btn.btn-primary.btn-buy:hover,
 body[data-article-number="SPARK-SI"] .btn.btn-primary.btn-buy:hover,
-body[data-article-number="TTH-CO"] .btn.btn-primary.btn-buy:hover {
+body[data-article-number="TTH-CO"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="RH-ST-R"] .btn.btn-primary.btn-buy:hover,
+body[data-article-number="LENA-ST-AAA"] .btn.btn-primary.btn-buy:hover {
   background-color: #ccc !important;
   color: #666 !important;
   border-color: #999 !important;
@@ -38,7 +42,6 @@ body[data-article-number="TTH-CO"] .btn.btn-primary.btn-buy:hover {
 }
 
 /* Wishlist ausblenden nur bei bestimmten Artikeln */
-
 body[data-article-number="LENA-S"]
   #productDetailPageBuyProductForm
   .btn.header-actions-btn,
@@ -79,6 +82,15 @@ body[data-article-number="RH-K"]
   #productDetailPageBuyProductForm
   .btn.header-actions-btn,
 body[data-article-number="RH-LG"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="RH-ST-R"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="RH-ST-R"]
+  #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="LENA-ST-AAA"]
   #productDetailPageBuyProductForm
   .btn.header-actions-btn {
   visibility: hidden !important;
