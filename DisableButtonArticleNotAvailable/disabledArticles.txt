@@ -20,5 +20,6 @@ const disabledArticles = [
   "TTH-ST-LB",
   "TTH-ST-O",
   "TTH-ST-R",
-  "TTH-ST-K"
+  "TTH-ST-K",
+  "TOM-K",
 ];

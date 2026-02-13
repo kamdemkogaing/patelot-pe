@@ -70,6 +70,9 @@ body[data-article-number="TTH-ST-R"]
   .btn.header-actions-btn,
 body[data-article-number="TTH-ST-K"]
   #productDetailPageBuyProductForm
+  .btn.header-actions-btn,
+body[data-article-number="TOM-K"]
+  #productDetailPageBuyProductForm
   .btn.header-actions-btn {
   visibility: hidden !important;
 }
