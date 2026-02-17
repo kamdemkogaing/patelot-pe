@@ -1,0 +1,153 @@
+maniacSeller:
+Benutzernamen: pkamdem
+Passwort: Pe#2025!
+
+------------------------------------------------------------
+
+Support SL:
+support@protronic-software.de
+
+-------------------------------------------------------------
+Zugang Webshop: 
+SW6: https://shop.printequipment.de/admin/
+Benutzer: patrick
+Passwort: PE#2025!
+
+SW5 Staging: https://sw5.printequipment.de/staging/backend/
+Benutzer: patrick
+Passwort: patrick101
+
+-----------------------------------------------
+https://printequipment.just.social/toro/resource/html#/homescreen
+E-Mail : pkamdem@printequipment.de
+Passwort : Print2025!
+
+-----------------------------------------------
+ZEUS:
+Link: http://pesv016/ZEUSXWA
+Benutzername : pequip\pkamdem
+Passwort: ?!Ludo1980
+
+----------------------------------------------
+
+http://192.168.33.105/otobo/index.pl?Action=AgentDashboard
+Benutzer: pkamdem
+PW: wie deine Anmeldung bei Windows
+
+-----------------------------------------------
+
+Zugang Wordpress:
+https://printequipment.de/reingehtspe
+ 
+Benutzername: 2022Pr!Ntequ19m3nT
+Passwort: 4@7@#663$943
+
+usr: pkamdem
+pwd: idC@k9(%&PsGOW$7fjlQhCH7
+
+-----------------------------------------------
+https://gitlab.dc2.wizmo.cloud/printequipment.de
+pkamdem@printequipment.de
+?!KogainG1980
+
+-----------------------------------------------
+
+Lexware
+TDy5dSPQ+lph
+
+-----------------------------------------------
+
+N26 Bank:
+Name: PATRICK LUDOVIC KAMDEM KOGAING
+IBAN: DE83100110012622988512
+BIC:  NTSBDEB1XXX
+
+Revolut Bank:
+Name: PATRICK LUDOVIC KAMDEM KOGAING
+IBAN: DE73100101783666145000
+BIC: REVODEB2
+
+Sparkasse Ortenau:
+Name: PATRICK LUDOVIC KAMDEM KOGAING
+IBAN: DE49664500501004669503
+BIC: SOLADES1OFG
+
+OPEN BANK, S.A.:
+Name: PATRICK LUDOVIC KAMDEM KOGAING
+IBAN: DE74500342002024004105
+BIC: OPENDEFFXXX
+
+--------------------------------------------
+
+pequipauralis@gmail.com
+PEG00gle2017
+
+--------------------------------------------
+
+Alternativer Titel in Backend-End
+
+event - EVENT
+sale - SALE
+neu - NEW
+leasing - LEASING
+
+--------------------------------------------
+
+ALLE - PE
+alle-pe@printequipment.de
+
+--------------------------------------------
+
+=$AB$2:$AB$5
+=$AC$2:$AC$4
+=$AD$2:$AD$11
+=$AA$2:$AA$366
+
+--------------------------------------------
+
+
+DE: https://shop.printequipment.de/store-api/product-export/SWPEDGHSYNDVZTNVEEDOV1LTQQ/resellerDE.csv
+EN: https://shop.printequipment.de/en/store-api/product-export/SWPEAXMWDLRPCWDKTMRHQLPVVA/resellerEN.csv
+FR: https://shop.printequipment.de/fr/store-api/product-export/SWPEAE94AWXSMKHERUT3CDBAZA/resellerFR.csv
+
+
+https://shop.printequipment.de/media/af/8a/4e/1770811576/Anletung_Holzprodukte_Instructions for wood products_Instructions pour produits en bois.pdf
+
+SFS-BB-CB-3035
+SFS-SP3-BO-01
+SFS-SP3-CO-95Q
+SFS-SP3-KR-RE
+SFS-SP5-DH-01
+SFS-SP5-PF-02
+SFS-SP5-PP-05
+SFS-SP3-CO-95Q
+SFS-MH-BT24-58R
+
+
+const disabledArticles = [
+  "LENA-F-AAA",
+  "LENA-S",
+  "LENA-ST-AAA",
+  "RH-K",
+  "RH-R",
+  "RH-LG",
+  "RH-LB",
+  "RH-ST-R",
+  "SPARK-SI",
+  "TTH-AR",
+  "TTH-BO",
+  "TTH-CO",
+  "TTH-GY",
+  "TTH-LG",
+  "TTH-R",
+  "TTH-ST-AR",
+  "TTH-ST-BO",
+  "TTH-ST-CO",
+  "TTH-ST-LB",
+  "TTH-ST-O",
+  "TTH-ST-R",
+  "TTH-ST-K",
+  "TOM-K",
+];
+
+
