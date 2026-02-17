@@ -150,4 +150,9 @@ const disabledArticles = [
   "TOM-K",
 ];
 
+---------
+
+DE: https://shop.printequipment.de/media/11/08/08/1771319870/Artikeldruckparameter_DE_2026-02-17_-_.pdf
+FR: https://shop.printequipment.de/media/84/b6/a6/1771319870/Liste_des_paramtres_d_impression_par_sublimation_FR_2026-02-17_-_.pdf
+EN: https://shop.printequipment.de/media/5b/a9/6c/1771319870/Printing_parameters_EN_2026-02-17_.pdf
 
