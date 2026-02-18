@@ -1,8 +1,8 @@
 // 1. Texte pro Sprache definieren
 const messages = {
-  "de-DE": `Ab dem 23.12.2025 um 12:00 Uhr befinden wir uns in der Betriebsruhe. Unser Onlineshop bleibt geöffnet, der Versand startet wieder am 05.01.2026.`,
-  "en-GB": `From December 23rd, 2025 at 12:00 PM, we will be closed due to company holidays. Our online shop remains open, and shipping will resume on January 5th, 2026.`,
-  "fr-FR": `À partir du 23 décembre 2025 à 12h00, nous serons en fermeture annuelle. Notre boutique en ligne reste ouverte et les expéditions reprendront à partir du 5 janvier 2026.`,
+  "de-DE": `Aufgrund des erhöhten Bestellaufkommens kann es derzeit zu Verzögerungen kommen. Wir bitten um Dein Verständnis!`,
+  "en-GB": `Due to high order volumes, there may currently be delays. We kindly ask for your understanding!`,
+  "fr-FR": `En raison d’un volume de commandes élevé, des retards peuvent actuellement survenir. Nous vous remercions de votre compréhension !`,
 };
 
 // 2. Aktuelle Sprache ermitteln
@@ -33,7 +33,7 @@ if (referenceDiv) {
 
 // 6. Schließen-Button funktional machen
 const closeButton = banner.querySelector(
-  ".swag-custom-notification-banner-close-icon"
+  ".swag-custom-notification-banner-close-icon",
 );
 if (closeButton) {
   closeButton.addEventListener("click", () => {
