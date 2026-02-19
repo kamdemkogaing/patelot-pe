@@ -152,14 +152,26 @@ const disabledArticles = [
 
 ---------
 
-DE: https://shop.printequipment.de/media/11/08/08/1771319870/Artikeldruckparameter_DE_2026-02-17_-_.pdf
-FR: https://shop.printequipment.de/media/84/b6/a6/1771319870/Liste_des_paramtres_d_impression_par_sublimation_FR_2026-02-17_-_.pdf
-EN: https://shop.printequipment.de/media/5b/a9/6c/1771319870/Printing_parameters_EN_2026-02-17_.pdf
 
+DE:
+Xtool: https://shop.printequipment.de/laser/lasergravierer/xtool/
+sale:  https://shop.printequipment.de/aktionen/
+Event: https://printequipment.de/events_messen/
 
-<meta name="google-site-verification" content="cbjA3LJZt1qhhUNSHLO9JvuCsJ51iIziaYYSEYIZZGw" />
+EN:
+Xtool: https://shop.printequipment.de/en/laser-engraving/laser-engraver/xtool/
+sale:  https://shop.printequipment.de/en/promotions/
+Event: https://printequipment.de/en/trade-fairs/
 
+FR:
+Xtool: https://shop.printequipment.de/fr/gravure-au-laser/graveur-laser/xtool/
+sale:  https://shop.printequipment.de/fr/promotions/
+Event: https://printequipment.de/fr/foires-et-salons/
 
-MAC-: https://shop.printequipment.de/media/7a/96/a9/1771400894/06_MAC-_mobil.jpg?width=2400
-PH- : https://shop.printequipment.de/media/98/00/c1/1771402336/07-PH_mobil.jpg?width=2400
-WLG-: https://shop.printequipment.de/media/79/1f/76/1771402367/08_WLG_mobil.jpg?width=2400
+Web-Katalog:
+DE: https://shop.printequipment.de/media/eb/52/af/1771503049/Laser_Programm_DE_Web.pdf
+FR: https://shop.printequipment.de/media/17/17/59/1771503125/Laser_Programm_FR_Web.pdf
+
+DE: https://shop.printequipment.de/media/c9/ed/ae/1771503172/Laser_Katalog_DE_02_2026.jpg?width=2400
+FR: https://shop.printequipment.de/media/14/86/b6/1771503172/Laser_Katalog_FR_02_2026.jpg?width=2400
+

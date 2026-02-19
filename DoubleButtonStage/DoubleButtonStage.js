@@ -5,26 +5,27 @@ document.addEventListener("DOMContentLoaded", function () {
     "de-DE": {
       href: "https://shop.printequipment.de/keramikbecher-ohne-deckel-spuelmaschinengeeignet-hoehe-95-mm-12-st.-lage-36-st.-karton/PH-11-O",
       text: "Zum Becher",
+      btnClass: "desktop-only-btns-3",
     },
     "fr-FR": {
       href: "https://shop.printequipment.de/fr/pot-solide-en-ceramique-sans-couvercle-resistant-au-lave-vaiselle-hauteur-95-mm-12-pcs.-couche-36-pcs.-carton/PH-11-O",
       text: "Voir le mug",
+      btnClass: "desktop-only-btns-3",
     },
     "en-GB": {
       href: "https://shop.printequipment.de/en/ceramic-cup-without-lid-dishwasher-suitable-height-95-mm-12-pcs.-lay-36-pcs.-carton/PH-11-O",
       text: "View Mug",
+      btnClass: "desktop-only-btns-3",
     },
   };
 
   const current = config[lang];
   if (!current) return;
 
-  // Alle Keen Slider durchsuchen
   document.querySelectorAll(".keen-slider").forEach((slider) => {
-    const btnContainer = slider.querySelector(".desktop-only-btns-3");
+    const btnContainer = slider.querySelector(`.${current.btnClass}`);
     if (!btnContainer) return;
 
-    // Verhindert mehrfaches Einfügen
     if (btnContainer.querySelector(".extra-mug-btn")) return;
 
     const newBtn = document.createElement("a");

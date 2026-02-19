@@ -1,39 +1,42 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Prüfen, ob <body> das data-Attribut hat
-  const body = document.querySelector(
-    'body[data-category-name="zum-alten-preis"]',
-  );
-  if (!body) return; // Wenn nicht, Script beenden
+  const lang = document.documentElement.lang; // aktuelle Sprache
+  let message = "";
+  let dataCategory = "";
 
-  // Container mit der Klasse finden
+  switch (lang) {
+    case "de-DE":
+      message = "Solange der Vorrat reicht";
+      dataCategory = "zum-alten-preis";
+      break;
+    case "fr-FR":
+      message = "Dans la limite des stocks disponibles";
+      dataCategory = "prix-précédent";
+      break;
+    case "en-GB":
+      message = "While supplies last";
+      dataCategory = "previous-price";
+      break;
+    default:
+      return;
+  }
+
+  const body = document.querySelector(
+    `body[data-category-name="${dataCategory}"]`,
+  );
+  if (!body) return;
+
   const productContainer = document.querySelector(
     ".cms-element-product-listing",
   );
-  if (!productContainer) return; // Wenn nicht vorhanden, Script beenden
+  if (!productContainer) return;
 
-  // Text je nach Sprache
-  let message = "";
-  switch (
-    document.documentElement.lang // Oder body.lang falls vorhanden
-  ) {
-    case "de-DE":
-      message = "Solange der Vorrat reicht";
-      break;
-    case "fr-FR":
-      message = "Si stock disponible";
-      break;
-    case "en-GB":
-      message = "When stock available";
-      break;
-    default:
-      message = ""; // Keine Anzeige, wenn Sprache nicht matcht
-  }
+  const alertElement = document.createElement("div");
+  alertElement.textContent = message;
 
-  if (message) {
-    // Neues Element erstellen und an die erste Stelle einfügen
-    const alertElement = document.createElement("div");
-    alertElement.textContent = message;
-    alertElement.style.fontWeight = "bold"; // optional, damit es auffällt
-    productContainer.prepend(alertElement);
-  }
+  alertElement.style.fontWeight = "bold";
+  alertElement.style.fontSize = "x-large";
+  alertElement.style.color = "red";
+  alertElement.style.margin = "10px";
+
+  productContainer.prepend(alertElement);
 });
