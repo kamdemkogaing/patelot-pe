@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "de-DE": {
       href: "https://shop.printequipment.de/keramikbecher-ohne-deckel-spuelmaschinengeeignet-hoehe-95-mm-12-st.-lage-36-st.-karton/PH-11-O",
       text: "Zum Becher",
-      btnClass: "desktop-only-btns-3",
+      btnClass: "desktop-only-btns-4",
     },
     "fr-FR": {
       href: "https://shop.printequipment.de/fr/pot-solide-en-ceramique-sans-couvercle-resistant-au-lave-vaiselle-hauteur-95-mm-12-pcs.-couche-36-pcs.-carton/PH-11-O",

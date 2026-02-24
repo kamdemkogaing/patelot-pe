@@ -77,6 +77,11 @@ Name: PATRICK LUDOVIC KAMDEM KOGAING
 IBAN: DE74500342002024004105
 BIC: OPENDEFFXXX
 
+Deutsche Bank
+Kontoinhaber: Cedric Tachuenguem Mbou
+IBAN: DE53660700240118895200
+BIC: DEUTDEDB660
+
 --------------------------------------------
 
 pequipauralis@gmail.com
@@ -105,73 +110,4 @@ alle-pe@printequipment.de
 
 --------------------------------------------
 
-
-DE: https://shop.printequipment.de/store-api/product-export/SWPEDGHSYNDVZTNVEEDOV1LTQQ/resellerDE.csv
-EN: https://shop.printequipment.de/en/store-api/product-export/SWPEAXMWDLRPCWDKTMRHQLPVVA/resellerEN.csv
-FR: https://shop.printequipment.de/fr/store-api/product-export/SWPEAE94AWXSMKHERUT3CDBAZA/resellerFR.csv
-
-
-https://shop.printequipment.de/media/af/8a/4e/1770811576/Anletung_Holzprodukte_Instructions for wood products_Instructions pour produits en bois.pdf
-
-SFS-BB-CB-3035
-SFS-SP3-BO-01
-SFS-SP3-CO-95Q
-SFS-SP3-KR-RE
-SFS-SP5-DH-01
-SFS-SP5-PF-02
-SFS-SP5-PP-05
-SFS-SP3-CO-95Q
-SFS-MH-BT24-58R
-
-
-const disabledArticles = [
-  "LENA-F-AAA",
-  "LENA-S",
-  "LENA-ST-AAA",
-  "RH-K",
-  "RH-R",
-  "RH-LG",
-  "RH-LB",
-  "RH-ST-R",
-  "SPARK-SI",
-  "TTH-AR",
-  "TTH-BO",
-  "TTH-CO",
-  "TTH-GY",
-  "TTH-LG",
-  "TTH-R",
-  "TTH-ST-AR",
-  "TTH-ST-BO",
-  "TTH-ST-CO",
-  "TTH-ST-LB",
-  "TTH-ST-O",
-  "TTH-ST-R",
-  "TTH-ST-K",
-  "TOM-K",
-];
-
----------
-
-
-DE:
-Xtool: https://shop.printequipment.de/laser/lasergravierer/xtool/
-sale:  https://shop.printequipment.de/aktionen/
-Event: https://printequipment.de/events_messen/
-
-EN:
-Xtool: https://shop.printequipment.de/en/laser-engraving/laser-engraver/xtool/
-sale:  https://shop.printequipment.de/en/promotions/
-Event: https://printequipment.de/en/trade-fairs/
-
-FR:
-Xtool: https://shop.printequipment.de/fr/gravure-au-laser/graveur-laser/xtool/
-sale:  https://shop.printequipment.de/fr/promotions/
-Event: https://printequipment.de/fr/foires-et-salons/
-
-Web-Katalog:
-DE: https://shop.printequipment.de/media/eb/52/af/1771503049/Laser_Programm_DE_Web.pdf
-FR: https://shop.printequipment.de/media/17/17/59/1771503125/Laser_Programm_FR_Web.pdf
-
-DE: https://shop.printequipment.de/media/c9/ed/ae/1771503172/Laser_Katalog_DE_02_2026.jpg?width=2400
-FR: https://shop.printequipment.de/media/14/86/b6/1771503172/Laser_Katalog_FR_02_2026.jpg?width=2400
-
+https://shop.printequipment.de/media/7c/82/bb/1771923507/10_WM_Angebote_mobil.jpg?width=2400
