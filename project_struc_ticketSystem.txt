@@ -1,68 +1,52 @@
-ticket-system/
-├─ .env
-├─ .env.example
-├─ .eslintrc.json
-├─ next.config.js
-├─ package.json
-├─ postcss.config.js
-├─ tailwind.config.ts
-├─ tsconfig.json
-├─ middleware.ts
+ticket-kanban/
 ├─ prisma/
 │  ├─ schema.prisma
-│  ├─ migrations/
 │  └─ seed.ts
 ├─ public/
-│  ├─ logo.png                 # dein Firmenlogo (weiß/schwarz Stil)
-│  ├─ favicon.ico              # optional (dein Icon)
-│  └─ (optional weitere assets)
-└─ src/
-   ├─ app/
-   │  ├─ globals.css
-   │  ├─ page.tsx              # Landing / Redirect (optional)
-   │  ├─ api/
-   │  │  ├─ auth/
-   │  │  │  └─ [...nextauth]/
-   │  │  │     └─ route.ts
-   │  │  └─ projects/
-   │  │     └─ [projectId]/
-   │  │        ├─ me/
-   │  │        │  └─ route.ts
-   │  │        ├─ members/
-   │  │        │  ├─ route.ts                 # GET/POST (list + add member)
-   │  │        │  └─ [memberId]/
-   │  │        │     └─ route.ts              # PATCH (role change)
-   │  │        └─ tickets/
-   │  │           ├─ route.ts                 # GET/POST tickets
-   │  │           └─ [ticketId]/
-   │  │              ├─ route.ts              # GET/PATCH/DELETE ticket
-   │  │              ├─ status/
-   │  │              │  └─ route.ts           # POST status change + audit
-   │  │              ├─ audit/
-   │  │              │  └─ route.ts           # GET audit timeline
-   │  │              └─ comments/
-   │  │                 └─ route.ts           # GET/POST comments + audit
-   │  ├─ (auth)/
-   │  │  └─ sign-in/
-   │  │     └─ page.tsx                       # Tailwind Sign-in (Microsoft/Google)
-   │  └─ (app)/
-   │     ├─ layout.tsx                        # Header (Logo, Logout) + Tailwind
-   │     └─ projects/
-   │        └─ [projectId]/
-   │           ├─ board/
-   │           │  └─ page.tsx                 # Kanban Board + DnD + Undo + Modal + Drawer
-   │           └─ settings/
-   │              └─ page.tsx                 # Members list + add member + role change
-   ├─ components/
-   │  ├─ tickets/
-   │  │  ├─ TicketDrawer.tsx                  # Drawer: audit + comments + assign + delete + edit button
-   │  │  └─ TicketModal.tsx                   # Create/Edit modal
-   │  └─ ui/
-   │     └─ ConfirmModal.tsx                  # Delete confirm modal
-   └─ lib/
-      ├─ prisma.ts                            # Prisma singleton
-      ├─ auth.ts                              # NextAuth config (Microsoft + Google)
-      ├─ api-helpers.ts                       # requireUserId + getProjectRole
-      ├─ rbac.ts                              # canEditTicket/canChangeStatus/canDeleteTicket
-      ├─ constants.ts                         # STATUS_ORDER
-      └─ validators.ts                        # zod schemas
+│  ├─ PE_logo.png
+│  └─ favicon.ico
+├─ src/
+│  ├─ app/
+│  │  ├─ api/
+│  │  │  ├─ admin/
+│  │  │  │  └─ members/
+│  │  │  │     └─ route.ts
+│  │  │  ├─ audit/
+│  │  │  │  └─ route.ts
+│  │  │  ├─ auth/
+│  │  │  │  └─ [...nextauth]/
+│  │  │  │     └─ route.ts
+│  │  │  ├─ members/
+│  │  │  │  └─ route.ts
+│  │  │  └─ tickets/
+│  │  │     ├─ move/
+│  │  │     │  └─ route.ts
+│  │  │     ├─ [id]/
+│  │  │     │  └─ route.ts
+│  │  │     └─ route.ts
+│  │  ├─ admin/
+│  │  │  └─ page.tsx
+│  │  ├─ login/
+│  │  │  └─ page.tsx
+│  │  ├─ layout.tsx
+│  │  ├─ page.tsx
+│  │  ├─ providers.tsx
+│  │  └─ globals.css
+│  ├─ components/
+│  │  ├─ AdminPanel.tsx
+│  │  ├─ AppHeader.tsx
+│  │  ├─ CreateTicketForm.tsx
+│  │  ├─ KanbanBoard.tsx
+│  │  ├─ KanbanCard.tsx
+│  │  ├─ KanbanColumn.tsx
+│  │  └─ TicketEditor.tsx
+│  ├─ lib/
+│  │  ├─ api.ts
+│  │  ├─ prisma.ts
+│  │  ├─ rbac.ts
+│  │  ├─ types.ts
+│  │  └─ validation.ts
+│  └─ middleware.ts
+├─ .env
+├─ package.json
+└─ tailwind.config.ts
