@@ -116,3 +116,9 @@ alle-pe@printequipment.de
 DE: https://shop.printequipment.de/store-api/product-export/SWPEDGHSYNDVZTNVEEDOV1LTQQ/resellerDE.csv
 EN: https://shop.printequipment.de/en/store-api/product-export/SWPEAXMWDLRPCWDKTMRHQLPVVA/resellerEN.csv
 FR: https://shop.printequipment.de/fr/store-api/product-export/SWPEAE94AWXSMKHERUT3CDBAZA/resellerFR.csv
+
+
+
+https://shop.printequipment.de/media/5a/60/a2/1770822180/04_Antidumpingzoll_mobil.jpg?width=2400
+
+
