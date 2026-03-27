@@ -10,6 +10,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const lang = document.documentElement.lang || "de-DE";
 
   /* ----------------------------
+       Lieferhinweis Text
+    ---------------------------- */
+  const stockTarget = document.querySelector(".w_nostock_text");
+  if (stockTarget) {
+    const stockTranslations = {
+      "de-DE": "Artikel nicht verfügbar",
+      "fr-FR": "Article non disponible",
+      "en-GB": "Item not available",
+    };
+
+    stockTarget.textContent =
+      stockTranslations[lang] || stockTranslations["de-DE"];
+  }
+
+  /* ----------------------------
        Button Text
     ---------------------------- */
   const buyButton = document.querySelector(".btn.btn-primary.btn-buy");
