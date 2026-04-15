@@ -1,0 +1,72 @@
+{
+  "Shop": {
+    "Druckverfahren": {
+      "Direktdruck": ["DTF", "DTG", "UV Druck"],
+      "Transferdruck": ["Sublimation", "Transferfolien"],
+      "Gravur & Laser": ["Lasergravur"]
+    },
+
+    "Rohlinge & Produkte": {
+      "Textilien": [
+        "T-Shirts",
+        "Hoodies",
+        "Poloshirts",
+        "Kindertextilien",
+        "Arbeitskleidung"
+      ],
+      "Accessoires": ["Taschen", "Caps"],
+      "Tassen & Trinkgefäße": [
+        "Keramiktassen",
+        "Emaillebecher",
+        "Trinkflaschen",
+        "Thermobecher"
+      ],
+      "Werbeartikel": [
+        "Schlüsselanhänger",
+        "Mousepads",
+        "Schilder",
+        "Büroartikel"
+      ],
+      "Fotoprodukte": ["Fotoplatten", "Fotosteine", "Puzzle"],
+      "Wohnen & Deko": ["Kissen", "Decken", "Untersetzer"]
+    },
+
+    "Maschinen & Systeme": {
+      "Drucksysteme": [
+        "DTF Drucker",
+        "Sublimationsdrucker",
+        "DTG Drucker",
+        "UV Drucker"
+      ],
+      "Transferpressen": [
+        "Clam Pressen",
+        "Schwenkpressen",
+        "Pneumatische Pressen",
+        "Tassenpressen"
+      ],
+      "Lasergeräte": ["CO2 Laser", "Faserlaser"],
+      "Plotter": ["Schneideplotter"],
+      "Automatisierung": ["Shaker Systeme", "Fördersysteme"]
+    },
+
+    "Verbrauchsmaterial": {
+      "Tinten": ["DTF Tinten", "Sublimationstinten", "DTG Tinten", "UV Tinten"],
+      "Transfermaterial": ["Transferpapier", "Sublimationspapier"],
+      "Folien": ["DTF Folien", "Flexfolien", "Flockfolien"],
+      "Kleber & Pulver": ["Hotmelt Pulver", "Sprühkleber"],
+      "Reinigung": ["Reinigungsflüssigkeiten", "Wartungskits"]
+    },
+
+    "Zubehör & Ersatzteile": {
+      "Ersatzteile": ["Druckköpfe", "Dämpfer", "Pumpen"],
+      "Werkzeuge": ["Werkzeuge", "Messgeräte"],
+      "Service": ["Wartung", "Kalibrierung"]
+    },
+
+    "Angebote": {
+      "Sale": ["Sale", "Restposten"],
+      "Aktionen": ["Aktionsprodukte"],
+      "Geräte": ["Demogeräte", "Gebrauchtgeräte"]
+    }
+  }
+}
