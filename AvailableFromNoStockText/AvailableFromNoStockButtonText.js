@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const articleNumber = body.getAttribute("data-article-number");
 
   // Nur für diese Artikel
-  const allowedArticles = ["L-MIKE-K", "L-MIKE-GR", "TOM-R"];
+  const allowedArticles = ["L-BENCH", "NORA-D-F-15"];
   if (!allowedArticles.includes(articleNumber)) return;
 
   // Sprache aus <html lang="">

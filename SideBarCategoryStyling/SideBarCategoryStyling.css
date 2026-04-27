@@ -1,0 +1,237 @@
+/* =========================================================
+   CATEGORY SIDEBAR - APPLE / LUXURY FINAL
+   Slide Animation + Hover Glow + Premium Micro Interaction
+   ========================================================= */
+
+.cms-element-category-navigation .category-navigation-box {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.035);
+}
+
+.cms-element-category-navigation .category-navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cms-element-category-navigation .category-navigation-entry {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.cms-element-category-navigation
+  .category-navigation.level-0
+  > .category-navigation-entry {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.cms-element-category-navigation
+  .category-navigation.level-0
+  > .category-navigation-entry:last-child {
+  border-bottom: 0;
+}
+
+.cms-element-category-navigation .category-navigation-link {
+  display: block;
+  position: relative;
+  padding: 16px 22px;
+  color: #111;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  background: transparent;
+  transition:
+    background 0.28s ease,
+    color 0.28s ease,
+    transform 0.18s ease,
+    box-shadow 0.28s ease,
+    padding 0.28s ease;
+}
+
+.cms-element-category-navigation
+  .category-navigation.level-0
+  > .category-navigation-entry
+  > .category-navigation-link {
+  margin: 6px 10px;
+  border-radius: 12px;
+}
+
+.cms-element-category-navigation
+  .category-navigation.level-0
+  > .category-navigation-entry
+  > .category-navigation-link:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 6px 18px rgba(0, 0, 0, 0.045);
+  transform: translateY(-1px);
+}
+
+.cms-element-category-navigation .category-navigation-link:active {
+  transform: scale(0.992);
+}
+
+.cms-element-category-navigation
+  .category-navigation-entry.has-children
+  > .category-navigation-link {
+  padding-right: 48px;
+}
+
+.cms-element-category-navigation
+  .category-navigation-entry.has-children
+  > .category-navigation-link::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #777;
+  border-bottom: 2px solid #777;
+  transform: rotate(-45deg);
+  margin-top: -4px;
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.cms-element-category-navigation
+  .category-navigation-entry.is-open
+  > .category-navigation-link::after {
+  transform: rotate(45deg);
+  margin-top: -6px;
+  border-color: #fff;
+}
+
+.cms-element-category-navigation
+  .category-navigation.level-0
+  > .category-navigation-entry
+  > .category-navigation-link.is-active,
+.cms-element-category-navigation
+  .category-navigation-entry.is-open
+  > .category-navigation-link.current-parent {
+  background: linear-gradient(180deg, #171717 0%, #000 100%);
+  color: #fff;
+  font-weight: 700;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  padding-left: 10px !important;
+}
+
+.cms-element-category-navigation
+  .category-navigation-entry.is-open
+  > .category-navigation-link.current-parent:hover {
+  background: linear-gradient(180deg, #202020 0%, #050505 100%);
+  transform: translateY(-1px);
+}
+
+/* Level 1 Container mit Slide */
+.cms-element-category-navigation .category-navigation.level-1 {
+  background: linear-gradient(180deg, #fdfdfd 0%, #f8f8f8 100%);
+  margin: 4px 10px 10px;
+  padding: 8px;
+  border-radius: 14px;
+  overflow: hidden;
+  max-height: 1200px;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    padding 0.25s ease,
+    margin 0.25s ease;
+}
+
+.cms-element-category-navigation
+  .category-navigation-entry.is-collapsed
+  > .category-navigation.level-1 {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  pointer-events: none;
+}
+
+/* Unterpunkte */
+.cms-element-category-navigation
+  .category-navigation.level-1
+  .category-navigation-link {
+  padding: 11px 16px 11px 22px;
+  margin: 3px 0;
+  font-size: 14px;
+  color: #333;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.cms-element-category-navigation
+  .category-navigation.level-1
+  .category-navigation-link::before {
+  display: none !important;
+}
+
+.cms-element-category-navigation
+  .category-navigation.level-1
+  .category-navigation-link:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
+  color: #000;
+  padding-left: 28px;
+  transform: translateX(2px);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.045),
+    0 5px 14px rgba(0, 0, 0, 0.045);
+}
+
+.cms-element-category-navigation
+  .category-navigation.level-1
+  .category-navigation-link.is-active {
+  background: linear-gradient(180deg, #121212 0%, #000 100%);
+  color: #fff;
+  font-weight: 700;
+  padding-left: 30px !important;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.cms-element-category-navigation
+  .category-navigation.level-1
+  .category-navigation-link.is-active:hover {
+  background: linear-gradient(180deg, #1f1f1f 0%, #050505 100%);
+}
+
+/* Kein Pfeil bei Unterkategorien */
+.cms-element-category-navigation
+  .category-navigation.level-1
+  .category-navigation-link::after {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+  .cms-element-category-navigation .category-navigation-box {
+    border-radius: 14px;
+  }
+
+  .cms-element-category-navigation .category-navigation-link {
+    font-size: 14px;
+  }
+
+  .cms-element-category-navigation
+    .category-navigation.level-1
+    .category-navigation-link.is-active {
+    padding-left: 26px !important;
+  }
+}
