@@ -1,8 +1,3 @@
-/* =========================================================
-   CATEGORY SIDEBAR - APPLE / LUXURY FINAL
-   Slide Animation + Hover Glow + Premium Micro Interaction
-   ========================================================= */
-
 .cms-element-category-navigation .category-navigation-box {
   background: #fff;
   border: 1px solid #e8e8e8;
@@ -169,7 +164,7 @@
 .cms-element-category-navigation
   .category-navigation.level-1
   .category-navigation-link {
-  padding: 11px 16px 11px 22px;
+  padding: 11px 16px 11px 22px !important;
   margin: 3px 0;
   font-size: 14px;
   color: #333;
