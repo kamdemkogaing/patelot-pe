@@ -30,7 +30,7 @@
     "en-GB": {
       freeShipping:
         '<span class="pe-shipping-benefits__highlight">Free shipping from €500</span><sup>1</sup>',
-      freeShippingSub: "within Germany",
+      freeShippingSub: "",
 
       shipping: "Shipping only €11.70<sup>1</sup>",
       shippingSub: "flat rate per order",
@@ -42,7 +42,7 @@
     "fr-FR": {
       freeShipping:
         '<span class="pe-shipping-benefits__highlight">Livraison gratuite dès 500 €</span><sup>1</sup>',
-      freeShippingSub: "en Allemagne",
+      freeShippingSub: "",
 
       shipping: "Livraison à seulement 15 €<sup>1</sup>",
       shippingSub: "forfait par commande",
@@ -162,7 +162,7 @@
      * <div id="mainBanner"
      *      class="pe-banner carousel slide carousel-fade main-hero">
      */
-    const mainBanner = document.querySelector("#mainBanner.pe-banner");
+    const mainBanner = document.querySelector("#mainBanner");
 
     if (!mainBanner) {
       return;
