@@ -29,11 +29,11 @@
 
     "en-GB": {
       freeShipping:
-        '<span class="pe-shipping-benefits__highlight">Free shipping from €500</span><sup>1</sup>',
-      freeShippingSub: "",
+        '<span class="pe-shipping-benefits__highlight">International shipping</span>',
+      freeShippingSub: "Shipping costs depend on the destination country",
 
-      shipping: "Shipping only €11.70<sup>1</sup>",
-      shippingSub: "flat rate per order",
+      shipping: "Shipping costs & surcharges",
+      shippingSub: "Provided with our invoice",
 
       order: "Order by 12 noon",
       orderSub: "ships the same day<sup>2</sup>",
@@ -160,7 +160,7 @@
      * Exakt dein Element:
      *
      * <div id="mainBanner"
-     *      class="pe-banner carousel slide carousel-fade main-hero">
+     *      class="carousel slide carousel-fade main-hero">
      */
     const mainBanner = document.querySelector("#mainBanner");
 
