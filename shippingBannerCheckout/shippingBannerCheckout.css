@@ -1,0 +1,334 @@
+/* ==========================================================
+   PRINT EQUIPMENT
+   Shipping Benefits Banner
+   Shopware 6.5.8.16
+
+   Verwendung:
+   - Startseite nach #mainBanner.pe-banner
+   - Checkout nach header.header-minimal
+   ========================================================== */
+
+/* ==========================================================
+   BASIS
+   ========================================================== */
+
+.pe-shipping-benefits {
+  position: relative;
+  z-index: 2;
+
+  width: 100vw;
+
+  /*
+     * Full-Width auch dann, wenn das Element innerhalb
+     * eines Shopware .container liegt.
+     */
+  left: 50%;
+  margin-left: -50vw;
+
+  background: #111111;
+  color: #ffffff;
+
+  border-top: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+
+  font-family: inherit;
+
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   INNER CONTAINER
+   ========================================================== */
+
+.pe-shipping-benefits__inner {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+  padding: 14px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   EINZELNE BENEFITS
+   ========================================================== */
+
+.pe-shipping-benefits__item {
+  flex: 1 1 0;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  padding: 0 35px;
+
+  box-sizing: border-box;
+}
+
+/*
+ * Trennlinie zwischen den 3 Bereichen
+ */
+.pe-shipping-benefits__item + .pe-shipping-benefits__item {
+  border-left: 1px solid #fff;
+}
+
+/* ==========================================================
+   ICONS
+   ========================================================== */
+
+.pe-shipping-benefits__icon {
+  width: 28px;
+  height: 28px;
+
+  flex: 0 0 28px;
+
+  color: #ffffff;
+}
+
+.pe-shipping-benefits__icon svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ==========================================================
+   TEXT
+   ========================================================== */
+
+.pe-shipping-benefits__content {
+  min-width: 0;
+
+  line-height: 1.15;
+}
+
+.pe-shipping-benefits__title {
+  margin: 0 0 3px 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+.pe-shipping-benefits__subtitle {
+  margin: 0;
+
+  color: #d0d0d0;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   ROTER PRINT-EQUIPMENT AKZENT
+   ========================================================== */
+
+.pe-shipping-benefits__highlight {
+  color: #ed1c24;
+}
+
+/* ==========================================================
+   FOOTNOTES
+   ========================================================== */
+
+.pe-shipping-benefits sup {
+  position: relative;
+
+  margin-left: 2px;
+
+  color: #ffffff;
+
+  font-size: 8px;
+  font-weight: 400;
+
+  line-height: 0;
+
+  vertical-align: super;
+}
+
+/* ==========================================================
+   HOMEPAGE
+   ========================================================== */
+
+.pe-shipping-benefits--homepage {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   CHECKOUT
+   ========================================================== */
+
+.pe-shipping-benefits--checkout {
+  /*
+     * Im Checkout wird der Banner direkt nach dem
+     * Full-Width Minimal Header eingefügt.
+     */
+  left: auto;
+
+  width: 100%;
+
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top: 1px solid #fff;
+}
+
+.pe-shipping-benefits--checkout .pe-shipping-benefits__inner {
+  max-width: 1400px;
+
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.pe-shipping-benefits--checkout .pe-shipping-benefits__item {
+  min-height: 44px;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 991.98px) {
+  .pe-shipping-benefits__inner {
+    padding: 12px 15px;
+  }
+
+  .pe-shipping-benefits__item {
+    gap: 10px;
+
+    padding: 0 15px;
+  }
+
+  .pe-shipping-benefits__icon {
+    width: 24px;
+    height: 24px;
+
+    flex-basis: 24px;
+  }
+
+  .pe-shipping-benefits__title {
+    font-size: 13px;
+
+    white-space: normal;
+  }
+
+  .pe-shipping-benefits__subtitle {
+    font-size: 10px;
+
+    white-space: normal;
+  }
+
+  .pe-shipping-benefits--checkout .pe-shipping-benefits__inner {
+    padding: 12px 15px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 767.98px) {
+  .pe-shipping-benefits__inner {
+    flex-direction: column;
+
+    padding: 0 18px;
+  }
+
+  .pe-shipping-benefits__item {
+    width: 100%;
+
+    flex: none;
+
+    justify-content: flex-start;
+
+    gap: 12px;
+
+    padding: 12px 5px;
+  }
+
+  /*
+     * Desktop-Trennlinie entfernen
+     */
+  .pe-shipping-benefits__item + .pe-shipping-benefits__item {
+    border-left: 0;
+    border-top: 1px solid #333333;
+  }
+
+  .pe-shipping-benefits__icon {
+    width: 25px;
+    height: 25px;
+
+    flex-basis: 25px;
+  }
+
+  .pe-shipping-benefits__title {
+    margin-bottom: 2px;
+
+    font-size: 13px;
+
+    white-space: normal;
+  }
+
+  .pe-shipping-benefits__subtitle {
+    font-size: 10px;
+
+    white-space: normal;
+  }
+
+  .pe-shipping-benefits--checkout .pe-shipping-benefits__inner {
+    padding: 0 18px;
+  }
+
+  .pe-shipping-benefits--checkout .pe-shipping-benefits__item {
+    min-height: auto;
+  }
+}
+
+/* ==========================================================
+   SEHR KLEINE SMARTPHONES
+   ========================================================== */
+
+@media (max-width: 399.98px) {
+  .pe-shipping-benefits__inner {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .pe-shipping-benefits__item {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  .pe-shipping-benefits__title {
+    font-size: 12px;
+  }
+
+  .pe-shipping-benefits__subtitle {
+    font-size: 9px;
+  }
+}
