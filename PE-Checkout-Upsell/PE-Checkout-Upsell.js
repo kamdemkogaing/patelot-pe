@@ -27,11 +27,11 @@
     testParameter: "pe-upsell-test",
 
     allowedPaths: [
-      "/staging/checkout/confirm",
+      "/checkout/confirm",
 
-      "/staging/en/checkout/confirm",
+      "/en/checkout/confirm",
 
-      "/staging/fr/checkout/confirm",
+      "/fr/checkout/confirm",
     ],
   };
 
