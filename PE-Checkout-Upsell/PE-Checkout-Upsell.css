@@ -1,0 +1,408 @@
+/* =========================================================
+   PRINT EQUIPMENT
+   PE Checkout Shipping Progress
+   TEST VERSION
+   ========================================================= */
+
+/* =========================================================
+   1. ALTEN SHIPPING-BANNER NUR IM TESTMODUS VERSTECKEN
+   ========================================================= */
+
+body.pe-upsell-test-active
+  .pe-shipping-benefits.pe-shipping-benefits--checkout {
+  display: none !important;
+}
+
+/* =========================================================
+   2. HAUPTCONTAINER
+   ========================================================= */
+
+#pe-checkout-upsell {
+  --pe-black: #0a0a0a;
+  --pe-text: #222222;
+  --pe-muted: #666666;
+  --pe-border: #dedede;
+  --pe-bg: #f8f8f8;
+  --pe-progress-bg: #dedede;
+
+  box-sizing: border-box;
+
+  width: 100%;
+
+  margin: 0 0 28px 0;
+  padding: 24px 28px;
+
+  background: var(--pe-bg);
+
+  border: 1px solid var(--pe-border);
+  border-radius: 12px;
+
+  color: var(--pe-black);
+
+  font-family: inherit;
+}
+
+#pe-checkout-upsell *,
+#pe-checkout-upsell *::before,
+#pe-checkout-upsell *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   3. INNER
+   ========================================================= */
+
+.pe-upsell__inner {
+  display: block;
+  width: 100%;
+}
+
+/* =========================================================
+   4. SHIPPING CONTENT
+   ========================================================= */
+
+.pe-upsell__shipping {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+/* =========================================================
+   5. ICON
+   ========================================================= */
+
+.pe-upsell__shipping-icon {
+  flex: 0 0 36px;
+
+  width: 36px;
+  height: 36px;
+
+  margin-top: 2px;
+
+  color: #111111;
+}
+
+.pe-upsell__shipping-icon svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================
+   6. CONTENT
+   ========================================================= */
+
+.pe-upsell__shipping-content {
+  flex: 1;
+
+  width: 100%;
+  max-width: 900px;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   7. TITEL
+   ========================================================= */
+
+.pe-upsell__title {
+  margin: 0 0 8px 0;
+
+  color: var(--pe-black);
+
+  font-size: 22px;
+  line-height: 1.25;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   8. BESCHREIBUNG
+   ========================================================= */
+
+.pe-upsell__subtitle {
+  margin: 0 0 22px 0;
+
+  color: var(--pe-text);
+
+  font-size: 14px;
+  line-height: 1.45;
+
+  font-weight: 400;
+}
+
+/* =========================================================
+   9. PROGRESS ROW
+   ========================================================= */
+
+.pe-upsell__progress-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(200px, 1fr)
+    auto;
+
+  gap: 18px;
+
+  align-items: center;
+
+  width: 100%;
+}
+
+/* =========================================================
+   10. PROGRESS BACKGROUND
+   ========================================================= */
+
+.pe-upsell__progress {
+  position: relative;
+
+  width: 100%;
+  height: 14px;
+
+  overflow: hidden;
+
+  background: var(--pe-progress-bg);
+
+  border-radius: 999px;
+}
+
+/* =========================================================
+   11. PROGRESS BAR
+   ========================================================= */
+
+.pe-upsell__progress-bar {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+
+  max-width: 100%;
+
+  background: var(--pe-black);
+
+  border-radius: inherit;
+
+  transition: width 0.35s ease;
+}
+
+/* =========================================================
+   12. PROGRESS VALUE
+   ========================================================= */
+
+.pe-upsell__progress-value {
+  min-width: 155px;
+
+  color: var(--pe-black);
+
+  font-size: 14px;
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.pe-upsell__progress-net {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--pe-muted);
+
+  font-size: 11px;
+  line-height: 1.2;
+
+  font-weight: 400;
+}
+
+/* =========================================================
+   13. FREE SHIPPING ERREICHT
+   ========================================================= */
+
+#pe-checkout-upsell.pe-free-shipping .pe-upsell__progress-bar {
+  width: 100% !important;
+}
+
+/* =========================================================
+   14. ENGLISCH / INTERNATIONAL
+   Kein Progress-Balken
+   ========================================================= */
+
+#pe-checkout-upsell.pe-international-shipping .pe-upsell__subtitle {
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   15. INTERNATIONAL INFO CARDS
+   ========================================================= */
+
+.pe-upsell__international-info {
+  display: flex;
+
+  align-items: stretch;
+
+  gap: 0;
+
+  width: 100%;
+
+  margin-top: 6px;
+}
+
+.pe-upsell__info-item {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 4px 24px;
+}
+
+.pe-upsell__info-item:first-child {
+  padding-left: 0;
+}
+
+.pe-upsell__info-item + .pe-upsell__info-item {
+  border-left: 1px solid #d2d2d2;
+}
+
+.pe-upsell__info-title {
+  margin-bottom: 3px;
+
+  color: var(--pe-black);
+
+  font-size: 14px;
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+.pe-upsell__info-subtitle {
+  color: var(--pe-muted);
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   16. TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+  #pe-checkout-upsell {
+    padding: 22px;
+  }
+
+  .pe-upsell__shipping-content {
+    max-width: none;
+  }
+
+  .pe-upsell__title {
+    font-size: 20px;
+  }
+}
+
+/* =========================================================
+   17. MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  #pe-checkout-upsell {
+    margin-bottom: 20px;
+
+    padding: 20px 16px;
+
+    border-radius: 9px;
+  }
+
+  .pe-upsell__shipping {
+    gap: 13px;
+  }
+
+  .pe-upsell__shipping-icon {
+    flex: 0 0 30px;
+
+    width: 30px;
+    height: 30px;
+  }
+
+  .pe-upsell__title {
+    margin-bottom: 7px;
+
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .pe-upsell__subtitle {
+    margin-bottom: 17px;
+
+    font-size: 13px;
+  }
+
+  .pe-upsell__progress-row {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .pe-upsell__progress-value {
+    min-width: 0;
+  }
+
+  .pe-upsell__international-info {
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .pe-upsell__info-item,
+  .pe-upsell__info-item:first-child {
+    padding: 0;
+  }
+
+  .pe-upsell__info-item + .pe-upsell__info-item {
+    padding-top: 14px;
+
+    border-left: 0;
+    border-top: 1px solid #d2d2d2;
+  }
+}
+
+/* =========================================================
+   18. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  #pe-checkout-upsell {
+    padding: 18px 14px;
+  }
+
+  .pe-upsell__shipping {
+    gap: 10px;
+  }
+
+  .pe-upsell__shipping-icon {
+    flex-basis: 27px;
+
+    width: 27px;
+    height: 27px;
+  }
+
+  .pe-upsell__title {
+    font-size: 17px;
+  }
+
+  .pe-upsell__subtitle {
+    font-size: 12px;
+  }
+
+  .pe-upsell__progress {
+    height: 12px;
+  }
+}

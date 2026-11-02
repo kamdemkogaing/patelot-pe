@@ -27,6 +27,10 @@
      ======================================================== */
 
   const translations = {
+    /* ======================================================
+       DEUTSCH
+       ====================================================== */
+
     "de-DE": {
       freeShipping:
         'Ab 200 € <span class="pe-shipping-benefits__highlight">versandkostenfrei</span><sup>1</sup>',
@@ -40,22 +44,34 @@
       order: "Bis 12 Uhr bestellt",
 
       orderSub: "heute versendet<sup>2</sup>",
+
+      more: "Mehr erfahren",
     },
+
+    /* ======================================================
+       ENGLISH
+       ====================================================== */
 
     "en-GB": {
       freeShipping:
-        '<span class="pe-shipping-benefits__highlight">International shipping</span>',
+        '<span class="pe-shipping-benefits__highlight">International shipping</span><sup>*</sup>',
 
-      freeShippingSub: "Shipping costs depend on the destination country",
+      freeShippingSub: "Check out our rates!",
 
-      shipping: "Shipping costs & surcharges",
+      shipping: "Fixed shipping rates throughout the holiday season",
 
-      shippingSub: "Provided with our invoice",
+      shippingSub: "Valid until December 31st<sup>*</sup>",
 
-      order: "Order by 12 noon",
+      order: "Same-day shipping",
 
-      orderSub: "ships the same day<sup>2</sup>",
+      orderSub: "Place your order before 12 pm<sup>*</sup>",
+
+      more: "Learn more",
     },
+
+    /* ======================================================
+       FRANÇAIS
+       ====================================================== */
 
     "fr-FR": {
       freeShipping:
@@ -70,7 +86,21 @@
       order: "Commandé avant 12 h",
 
       orderSub: "expédié le jour même<sup>2</sup>",
+
+      more: "En savoir plus",
     },
+  };
+
+  /* ========================================================
+     VERSANDBEDINGUNGEN URLS
+     ======================================================== */
+
+  const shippingUrls = {
+    "de-DE": "/kundeninformationen/versandbedingungen/",
+
+    "en-GB": "/en/shop-service/terms-of-shipment/",
+
+    "fr-FR": "/fr/assistance-boutique/conditions-d-expedition/",
   };
 
   /* ========================================================
@@ -78,12 +108,17 @@
      ======================================================== */
 
   const icons = {
+    /* ======================================================
+       PACKAGE
+       ====================================================== */
+
     package: `
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true"
         focusable="false"
       >
+
         <path
           d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
         ></path>
@@ -98,8 +133,13 @@
           x2="12"
           y2="12"
         ></line>
+
       </svg>
     `,
+
+    /* ======================================================
+       TRUCK
+       ====================================================== */
 
     truck: `
       <svg
@@ -133,6 +173,10 @@
 
       </svg>
     `,
+
+    /* ======================================================
+       CLOCK
+       ====================================================== */
 
     clock: `
       <svg
@@ -179,7 +223,7 @@
     }
 
     /*
-     * Default DE
+     * DEFAULT DE
      */
     return "de-DE";
   }
@@ -190,13 +234,13 @@
 
   function getPath() {
     /*
-     * Trailing Slash entfernen:
+     * Trailing Slash entfernen
      *
-     * /checkout/confirm/
+     * /staging/checkout/confirm/
      *
-     * wird zu:
+     * wird:
      *
-     * /checkout/confirm
+     * /staging/checkout/confirm
      */
 
     return window.location.pathname.replace(/\/+$/, "");
@@ -210,9 +254,9 @@
     const path = getPath();
 
     return (
-      path === "/staging/checkout/confirm" ||
-      path === "/staging/en/checkout/confirm" ||
-      path === "/staging/fr/checkout/confirm"
+      path === "/checkout/confirm" ||
+      path === "/en/checkout/confirm" ||
+      path === "/fr/checkout/confirm"
     );
   }
 
@@ -220,20 +264,71 @@
      ITEM HTML
      ======================================================== */
 
-  function createItem(icon, title, subtitle) {
-    /*
-     * Leerer Subtitle bei FR ist erlaubt.
-     *
-     * Dadurch wird keine unnötige leere Zeile ausgegeben.
-     */
+  function createItem(icon, title, subtitle, moreText = "", moreUrl = "") {
+    /* ======================================================
+       SUBTITLE
+       ====================================================== */
 
     const subtitleHTML = subtitle
       ? `
-        <div class="pe-shipping-benefits__subtitle">
-          ${subtitle}
-        </div>
-      `
+          <div class="pe-shipping-benefits__subtitle">
+            ${subtitle}
+          </div>
+        `
       : "";
+
+    /* ======================================================
+       MEHR ERFAHREN
+
+       Wird nur erzeugt, wenn moreText UND moreUrl
+       vorhanden sind.
+
+       Deshalb erscheint der Link später ausschließlich
+       beim ersten Benefit.
+       ====================================================== */
+
+    const moreHTML =
+      moreText && moreUrl
+        ? `
+            <a
+              class="pe-shipping-benefits__more"
+              href="${moreUrl}"
+            >
+
+              <span
+                class="pe-shipping-benefits__more-icon"
+                aria-hidden="true"
+              >
+
+                <svg
+                  viewBox="0 0 24 24"
+                  focusable="false"
+                >
+
+                  <path
+                    d="M5 12h14"
+                  ></path>
+
+                  <path
+                    d="M13 6l6 6-6 6"
+                  ></path>
+
+                </svg>
+
+              </span>
+
+
+              <span class="pe-shipping-benefits__more-text">
+                ${moreText}
+              </span>
+
+            </a>
+          `
+        : "";
+
+    /* ======================================================
+       ITEM AUSGEBEN
+       ====================================================== */
 
     return `
 
@@ -250,7 +345,11 @@
             ${title}
           </div>
 
+
           ${subtitleHTML}
+
+
+          ${moreHTML}
 
         </div>
 
@@ -266,6 +365,8 @@
   function getBannerHTML(language) {
     const text = translations[language];
 
+    const shippingUrl = shippingUrls[language];
+
     if (!text) {
       return "";
     }
@@ -274,13 +375,39 @@
 
       <div class="pe-shipping-benefits__inner">
 
-        ${createItem(icons.package, text.freeShipping, text.freeShippingSub)}
 
+        <!-- ================================================
+             1. BLOCK
+
+             LINK WIRD NUR HIER AUSGEGEBEN
+             ================================================ -->
+
+        ${createItem(
+          icons.package,
+          text.freeShipping,
+          text.freeShippingSub,
+          text.more,
+          shippingUrl,
+        )}
+
+
+        <!-- ================================================
+             2. BLOCK
+
+             KEIN LINK
+             ================================================ -->
 
         ${createItem(icons.truck, text.shipping, text.shippingSub)}
 
 
+        <!-- ================================================
+             3. BLOCK
+
+             KEIN LINK
+             ================================================ -->
+
         ${createItem(icons.clock, text.order, text.orderSub)}
+
 
       </div>
 
@@ -296,16 +423,25 @@
 
     const banner = document.createElement("div");
 
+    /*
+     * Basis Klasse
+     */
+
     banner.className = "pe-shipping-benefits";
 
     /*
      * Homepage oder Checkout
      */
+
     if (type === "checkout") {
       banner.classList.add("pe-shipping-benefits--checkout");
     } else {
       banner.classList.add("pe-shipping-benefits--homepage");
     }
+
+    /*
+     * Marker
+     */
 
     banner.setAttribute("data-pe-shipping-benefits", "true");
 
@@ -316,9 +452,14 @@
     /*
      * Accessibility
      */
+
     banner.setAttribute("role", "region");
 
     banner.setAttribute("aria-label", "Shipping information");
+
+    /*
+     * HTML Inhalt
+     */
 
     banner.innerHTML = getBannerHTML(language);
 
@@ -339,11 +480,13 @@
     /*
      * Sprache aktualisieren
      */
+
     banner.setAttribute("data-language", language);
 
     /*
-     * Text aktualisieren
+     * Inhalt aktualisieren
      */
+
     banner.innerHTML = getBannerHTML(language);
   }
 
@@ -353,41 +496,42 @@
 
   function initHomepageBanner() {
     /*
-     * Checkout hier ausschließen.
+     * Checkout ausschließen
      */
+
     if (isCheckoutConfirmPage()) {
       return;
     }
 
     /*
-     * Dein bestehender Hero:
-     *
-     * <div
-     *   id="mainBanner"
-     *   class="carousel ..."
-     * >
+     * Hero suchen
      */
+
     const mainBanner = document.querySelector("#mainBanner");
 
     /*
-     * Wenn kein MainBanner existiert,
-     * sind wir wahrscheinlich nicht auf der Homepage.
+     * Kein MainBanner vorhanden:
+     * wahrscheinlich nicht Homepage
      */
+
     if (!mainBanner) {
       return;
     }
 
     /*
-     * Prüfen, ob Homepage-Banner bereits existiert.
+     * Prüfen, ob Homepage Banner
+     * bereits vorhanden ist
      */
+
     let existingBanner = document.querySelector(
       '[data-pe-banner-location="homepage"]',
     );
 
     /*
      * Existiert bereits:
-     * nur Sprache/Inhalt aktualisieren.
+     * Inhalt aktualisieren
      */
+
     if (existingBanner) {
       updateExistingBanner(existingBanner);
 
@@ -395,13 +539,15 @@
     }
 
     /*
-     * Neuen Banner erstellen.
+     * Neuen Banner erstellen
      */
+
     const banner = createBannerElement("homepage");
 
     /*
-     * DIREKT NACH HERO
+     * Direkt nach Hero einsetzen
      */
+
     mainBanner.insertAdjacentElement("afterend", banner);
   }
 
@@ -411,31 +557,23 @@
 
   function initCheckoutBanner() {
     /*
-     * Nur diese Seiten:
-     *
-     * DE:
-     * /checkout/confirm
-     *
-     * EN:
-     * /en/checkout/confirm
-     *
-     * FR:
-     * /fr/checkout/confirm
+     * Nur Checkout Confirm
      */
+
     if (!isCheckoutConfirmPage()) {
       return;
     }
 
     /*
-     * Shopware Minimal Header:
-     *
-     * <header class="header-minimal">
+     * Shopware Minimal Header
      */
+
     const header = document.querySelector("header.header-minimal");
 
     /*
-     * Header noch nicht vorhanden?
+     * Header noch nicht vorhanden
      */
+
     if (!header) {
       console.warn(
         "PE Shipping Banner: header.header-minimal wurde noch nicht gefunden.",
@@ -445,17 +583,18 @@
     }
 
     /*
-     * Prüfen, ob Checkout-Banner
-     * bereits existiert.
+     * Prüfen, ob Checkout Banner
+     * bereits existiert
      */
+
     let existingBanner = document.querySelector(
       '[data-pe-banner-location="checkout"]',
     );
 
     /*
-     * Existiert bereits:
-     * Sprache aktualisieren.
+     * Existiert bereits
      */
+
     if (existingBanner) {
       updateExistingBanner(existingBanner);
 
@@ -463,22 +602,13 @@
     }
 
     /*
-     * Neuen Checkout Banner erstellen.
+     * Neuen Checkout Banner erstellen
      */
+
     const banner = createBannerElement("checkout");
 
     /*
-     * =====================================================
-     * WICHTIG
-     *
-     * DIREKT NACH:
-     *
-     * <header class="header-minimal">
-     *
-     * </header>
-     *
-     * wird der Banner eingesetzt.
-     * =====================================================
+     * Direkt nach Minimal Header
      */
 
     header.insertAdjacentElement("afterend", banner);
@@ -490,8 +620,9 @@
 
   function initShippingBenefits() {
     /*
-     * Checkout
+     * CHECKOUT
      */
+
     if (isCheckoutConfirmPage()) {
       initCheckoutBanner();
 
@@ -499,8 +630,9 @@
     }
 
     /*
-     * Homepage
+     * HOMEPAGE
      */
+
     initHomepageBanner();
   }
 
@@ -512,12 +644,14 @@
     /*
      * Sofort
      */
+
     initShippingBenefits();
 
     /*
      * Shopware Sicherheit:
-     * Falls CMS/Header verzögert gerendert wird.
+     * Falls CMS / Header verzögert gerendert wird.
      */
+
     window.setTimeout(initShippingBenefits, 250);
 
     window.setTimeout(initShippingBenefits, 750);
