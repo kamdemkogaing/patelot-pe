@@ -1,0 +1,94 @@
+/* ============================================
+   PRINT EQUIPMENT – TRANSPORTKOSTEN
+   Shopware 6.5 | DE / EN / FR
+============================================ */
+
+.pe-transport-note {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  margin: 10px 0 12px;
+  background: #f3f4f5;
+  border-left: 3px solid #111;
+  border-radius: 4px;
+  color: #333;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.pe-transport-note__title {
+  display: block;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #111;
+}
+
+.pe-transport-note__message {
+  display: block;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #444;
+}
+
+.pe-transport-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: #111;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* OFFCANVAS */
+
+.offcanvas-shipping-info {
+  align-items: flex-start;
+}
+
+.offcanvas-shipping-info .shipping-value {
+  overflow-wrap: anywhere;
+}
+
+.pe-offcanvas-transport-note {
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+
+/* CHECKOUT */
+
+.checkout-aside-summary-list .pe-checkout-transport-note {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+  margin: 8px 0 12px;
+  text-align: left;
+}
+
+.checkout-aside-summary-list .pe-transport-value {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+  .pe-transport-note {
+    padding: 10px 12px;
+  }
+
+  .pe-transport-note__title {
+    font-size: 12px;
+  }
+
+  .pe-transport-note__message {
+    font-size: 11px;
+  }
+
+  .pe-transport-value {
+    font-size: 11px;
+  }
+}
